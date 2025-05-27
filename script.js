@@ -1,26 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Random Password Generator</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
+const passwordField = document.getElementById("password");
+const copyBtn = document.getElementById("copyBtn");
+const generateBtn = document.getElementById("generateBtn");
 
-<div class="container">
-    <h1>Generate a <br><span>Random Password</span></h1>
+function generatePassword(length = 12) {
+  const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return password;
+}
 
-    <div class="display">
-        <input type="text" id="password" placeholder="Password" readonly>
-        <button id="copyBtn" class="copy-icon-btn" title="Copy Password">📋</button>
-    </div>
+generateBtn.addEventListener("click", () => {
+  const password = generatePassword();
+  passwordField.value = password;
+});
 
-    <button onclick="generatePassword()" class="generate-btn">Generate Password</button>
-
-    <p id="copyFeedback">Password copied!</p>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+copyBtn.addEventListener("click", () => {
+  if (passwordField.value !== "") {
+    navigator.clipboard.writeText(passwordField.value);
+    copyBtn.textContent = "✔";
+    setTimeout(() => {
+      copyBtn.textContent = "⧉";
+    }, 1500);
+  }
+});
