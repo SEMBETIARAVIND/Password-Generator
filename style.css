@@ -1,0 +1,106 @@
+/* Reset and base font */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #002339;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+
+.container h1 {
+    font-weight: 500;
+    font-size: 45px;
+}
+
+.container h1 span {
+    color: #019f55;
+    border-bottom: 4px solid #019f55;
+    padding-bottom: 7px;
+}
+
+/* Display box */
+.display {
+    width: 100%;
+    margin: 50px 0 30px;
+    background: #fff;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+.display input {
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: #333;
+    background: transparent;
+}
+
+/* Copy icon button */
+.copy-icon-btn {
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #019f55;
+    transition: transform 0.3s ease;
+}
+
+.copy-icon-btn:hover {
+    transform: scale(1.4);
+    color: #017a40;
+}
+
+/* Generate button */
+.generate-btn {
+    border: 0;
+    outline: 0;
+    background: #019f55;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 26px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.generate-btn:hover {
+    background: #017a40;
+}
+
+/* Copy feedback message */
+#copyFeedback {
+    margin-top: 15px;
+    color: #00ffcc;
+    display: none;
+    text-align: center;
+    font-size: 16px;
+}
